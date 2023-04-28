@@ -1,0 +1,41 @@
+/* Set a max-width for the page content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Style the heading */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Style the price display containers */
+  #price-min,
+  #price-max,
+  #price-avg {
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+  }
+  
+  /* Style the responsive layout for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      max-width: 90%;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    #price-min,
+    #price-max,
+    #price-avg {
+      font-size: 1.2rem;
+    }
+  }
+  
