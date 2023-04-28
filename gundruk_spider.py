@@ -8,7 +8,7 @@ class GundukSpider(scrapy.Spider):
     def parse(self, response):
         price_min = response.css('#commodityPriceParticular td:contains("गुन्दुक") + td + td').extract_first()
         price_max = response.css('#commodityPriceParticular td:contains("गुन्दुक") + td + td + td').extract_first()
-        price_avg = response.css('#commodityPriceParticular td:contains("गुन्दुक") + td + td').extract_first()
+        price_avg = response.css('#commodityPriceParticular td:contains("गुन्दुक") + td + td + td + td').extract_first()
 
         # use regex to extract text content within <td> tags
         price_min = re.search(r'<td>(.*?)</td>', price_min).group(1)
