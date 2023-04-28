@@ -7,7 +7,7 @@
   
   /* Style the heading */
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
   }
   
@@ -16,10 +16,10 @@
   #price-max,
   #price-avg {
     background-color: #f2f2f2;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    font-size: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10rem;
+    font-size: 2rem;
   }
   
   /* Style the responsive layout for smaller screens */
@@ -29,13 +29,26 @@
     }
     
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
     
     #price-min,
     #price-max,
     #price-avg {
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
+  }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 1.7rem;
+    }
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   
