@@ -1,0 +1,31 @@
+name: Show Gundruk Price
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Scrapy spider
+        run: scrapy runspider gundruk_spider.py -O prices.json
+      - name: Commit changes
+        run: |
+          git config --global user.name '${{ secrets.MAIN_USERNAME }}'
+          git config --global user.email '${{ secrets.MAIN_EMAIL }}'
+          git add -f prices.json
+          git commit -m "Update prices.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

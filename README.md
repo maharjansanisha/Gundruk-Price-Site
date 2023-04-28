@@ -1,3 +1,3 @@
-# BoredBored
+Showing gundruk ko price every day
 
-Bored Board
+Favourite Yum Yum
