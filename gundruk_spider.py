@@ -2,7 +2,7 @@ import scrapy
 import re
 
 class GundukSpider(scrapy.Spider):
-    name = 'golveda'
+    name = 'kiwi'
     start_urls = ['https://kalimatimarket.gov.np/price'] # replace with the URL of the website to scrape
 
     def parse(self, response):
